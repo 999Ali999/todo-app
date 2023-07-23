@@ -47,19 +47,19 @@ const Header = ({ onClick }) => {
             <Grid item>
               <Button
                 onClick={onClick}
-                sx={{ borderRadius: "10px", color: "#fff" }}
+                sx={{ borderRadius: "5px", color: "#fff" }}
                 size="large"
               >
                 <Brightness4Icon />
               </Button>
             </Grid>
             <Grid item>
-              <Button sx={{ borderRadius: "10px", color: "#fff" }} size="large">
+              <Button sx={{ borderRadius: "5px", color: "#fff" }} size="large">
                 <SettingsIcon />
               </Button>
             </Grid>
             <Grid item>
-              <Button sx={{ borderRadius: "10px", color: "#fff" }} size="large">
+              <Button sx={{ borderRadius: "5px", color: "#fff" }} size="large">
                 <AccountCircle />
               </Button>
             </Grid>

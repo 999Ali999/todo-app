@@ -1,16 +1,19 @@
 import React from "react";
 import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
-import List from "@mui/material/List";
 import Drawer from "@mui/material/Drawer";
 import { Box, Toolbar } from "@mui/material";
+import SidebarOptions from "./SidebarOptions";
+
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import StarOutlineRoundedIcon from "@mui/icons-material/StarOutlineRounded";
+import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
+import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
+import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import AddRoundedIcon from "@mui/icons-material/AddRounded";
 
 const drawerWidth = 290;
+
+const list = ["My Day", "Important", "Planned", "Assigned to me", "Tasks"];
 
 const Sidebar = () => {
   return (
@@ -27,31 +30,16 @@ const Sidebar = () => {
     >
       <Toolbar />
       <Box sx={{ overflow: "auto" }}>
-        <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
+        <SidebarOptions icon={<LightModeOutlinedIcon />} text={"My Day"} />
+        <SidebarOptions icon={<StarOutlineRoundedIcon />} text={"Important"} />
+        <SidebarOptions icon={<CalendarMonthOutlinedIcon />} text={"Planned"} />
+        <SidebarOptions
+          icon={<PermIdentityOutlinedIcon />}
+          text={"Assigned to me"}
+        />
+        <SidebarOptions icon={<HomeRoundedIcon />} text={"Tasks"} />
         <Divider />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
+        <SidebarOptions icon={<AddRoundedIcon />} text={"New list"} />
       </Box>
     </Drawer>
   );
