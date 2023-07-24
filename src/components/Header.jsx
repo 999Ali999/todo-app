@@ -1,5 +1,12 @@
 import React from "react";
-import { Button, Grid, IconButton, Toolbar, Typography } from "@mui/material";
+import {
+  Button,
+  Grid,
+  IconButton,
+  Toolbar,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import SearchBar from "./SearchBar";
 import AccountCircle from "@mui/icons-material/AccountCircle";
@@ -45,23 +52,35 @@ const Header = ({ onClick }) => {
             spacing={0.5}
           >
             <Grid item>
-              <Button
-                onClick={onClick}
-                sx={{ borderRadius: "5px", color: "#fff" }}
-                size="large"
-              >
-                <Brightness4Icon />
-              </Button>
+              <Tooltip title="Change Appearance">
+                <Button
+                  onClick={onClick}
+                  sx={{ borderRadius: "5px", color: "#fff" }}
+                  size="large"
+                >
+                  <Brightness4Icon />
+                </Button>
+              </Tooltip>
             </Grid>
             <Grid item>
-              <Button sx={{ borderRadius: "5px", color: "#fff" }} size="large">
-                <SettingsIcon />
-              </Button>
+              <Tooltip title="Settings">
+                <Button
+                  sx={{ borderRadius: "5px", color: "#fff" }}
+                  size="large"
+                >
+                  <SettingsIcon />
+                </Button>
+              </Tooltip>
             </Grid>
             <Grid item>
-              <Button sx={{ borderRadius: "5px", color: "#fff" }} size="large">
-                <AccountCircle />
-              </Button>
+              <Tooltip title="Account Manager">
+                <Button
+                  sx={{ borderRadius: "5px", color: "#fff" }}
+                  size="large"
+                >
+                  <AccountCircle />
+                </Button>
+              </Tooltip>
             </Grid>
           </Grid>
         </Grid>
