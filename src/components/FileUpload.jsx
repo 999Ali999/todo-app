@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { Button, ListItem, ListItemButton, Typography } from "@mui/material";
-import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import AttachFileOutlinedIcon from "@mui/icons-material/AttachFileOutlined";
 
 const FileUploadButton = () => {

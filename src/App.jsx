@@ -22,7 +22,7 @@ const darkTheme = createTheme({
 });
 
 const App = () => {
-  const [theme, setTheme] = useState(lightTheme); // Initial theme
+  const [theme, setTheme] = useState(darkTheme); // Initial theme
 
   const toggleTheme = () => {
     setTheme((prevTheme) =>
