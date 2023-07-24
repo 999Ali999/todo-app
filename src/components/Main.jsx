@@ -1,6 +1,6 @@
 import React from "react";
 import Toolbar from "@mui/material/Toolbar";
-import { Box } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 import MainHeader from "./MainHeader";
 
 const Main = () => {
