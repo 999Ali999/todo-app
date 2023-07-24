@@ -11,12 +11,13 @@ import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 
-const drawerWidth = 290;
+const drawerWidth = 360;
 
-const Sidebar = () => {
+const EditSidebar = () => {
   return (
     <Drawer
       variant="permanent"
+      anchor="right"
       sx={{
         width: drawerWidth,
         flexShrink: 0,
@@ -27,20 +28,9 @@ const Sidebar = () => {
       }}
     >
       <Toolbar />
-      <Box sx={{ overflow: "auto" }}>
-        <SidebarOptions icon={<LightModeOutlinedIcon />} text={"My Day"} />
-        <SidebarOptions icon={<StarOutlineRoundedIcon />} text={"Important"} />
-        <SidebarOptions icon={<CalendarMonthOutlinedIcon />} text={"Planned"} />
-        <SidebarOptions
-          icon={<PermIdentityOutlinedIcon />}
-          text={"Assigned to me"}
-        />
-        <SidebarOptions icon={<HomeRoundedIcon />} text={"Tasks"} />
-        <Divider />
-        <SidebarOptions icon={<AddRoundedIcon />} text={"New list"} />
-      </Box>
+      <Box sx={{ overflow: "auto" }}></Box>
     </Drawer>
   );
 };
 
-export default Sidebar;
+export default EditSidebar;

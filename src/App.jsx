@@ -1,12 +1,11 @@
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Box, Button, CssBaseline } from "@mui/material";
+import { Box, Button, CssBaseline, Paper } from "@mui/material";
 import Header from "./components/Header";
 import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Main from "./components/Main";
-
-import { getDatabase, ref, child, get } from "firebase/database";
 import { app } from "./firebaseConfig";
+import EditSidebar from "./components/EditSideBar";
 
 // Create your light and dark themes
 const lightTheme = createTheme({
@@ -23,21 +22,6 @@ const darkTheme = createTheme({
 
 const App = () => {
   const [theme, setTheme] = useState(darkTheme); // Initial theme
-  const dbRef = ref(getDatabase(app));
-
-  const click = () => {
-    get(child(dbRef, `todos`))
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-          console.log(snapshot.val());
-        } else {
-          console.log("No data available");
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
 
   const toggleTheme = () => {
     setTheme((prevTheme) =>
@@ -48,12 +32,14 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box sx={{ display: "flex" }}>
-        <Header onClick={toggleTheme} />
-        <Sidebar />
-        <Main />
-        <Button onClick={click}>Ali</Button>
-      </Box>
+      <Paper sx={{ minHeight: "100vh" }} elevation={1}>
+        <Box sx={{ display: "flex" }}>
+          <Header onClick={toggleTheme} />
+          <Sidebar />
+          <Main />
+          <EditSidebar />
+        </Box>
+      </Paper>
     </ThemeProvider>
   );
 };
