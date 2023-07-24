@@ -1,7 +1,15 @@
 import React from "react";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
-import { Box, Toolbar } from "@mui/material";
+import {
+  Box,
+  Button,
+  Checkbox,
+  Grid,
+  Paper,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 import SidebarOptions from "./SidebarOptions";
 
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
@@ -10,6 +18,7 @@ import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
+import EditSidebarOptions from "./EditSidebarOptions";
 
 const drawerWidth = 360;
 
@@ -28,7 +37,10 @@ const EditSidebar = () => {
       }}
     >
       <Toolbar />
-      <Box sx={{ overflow: "auto" }}></Box>
+      <Box sx={{ overflow: "auto" }}>
+        <EditSidebarOptions />
+        <SidebarOptions icon={<AddRoundedIcon />} text={"Add step"} />
+      </Box>
     </Drawer>
   );
 };

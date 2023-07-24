@@ -11,12 +11,12 @@ import MailIcon from "@mui/icons-material/Mail";
 
 const SidebarOptions = ({ icon, text }) => {
   return (
-    <List sx={{ padding: "5px" }}>
+    <List disablePadding>
       <ListItem disablePadding>
-        <ListItemButton sx={{ borderRadius: "5px" }}>
+        <ListItemButton>
           <ListItemIcon>{icon}</ListItemIcon>
           <ListItemText>
-            <Typography variant="button" textTransform={"none"}>
+            <Typography variant="subtitle1" textTransform={"none"}>
               {text}
             </Typography>
           </ListItemText>
