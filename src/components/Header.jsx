@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Button,
-  Grid,
-  IconButton,
-  Toolbar,
-  Tooltip,
-  Typography,
-} from "@mui/material";
+import { Button, Grid, Toolbar, Tooltip, Typography } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import SearchBar from "./SearchBar";
 import AccountCircle from "@mui/icons-material/AccountCircle";

@@ -6,7 +6,6 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
-import CommentIcon from "@mui/icons-material/Comment";
 import { Typography } from "@mui/material";
 import RadioButtonUncheckedRoundedIcon from "@mui/icons-material/RadioButtonUncheckedRounded";
 import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
@@ -39,7 +38,7 @@ export default function EditSidebarOptions() {
         }
         disablePadding
       >
-        <ListItemButton role={undefined} dense>
+        <ListItemButton>
           <ListItemIcon>
             <Checkbox
               edge="start"
@@ -49,7 +48,7 @@ export default function EditSidebarOptions() {
           </ListItemIcon>
           <ListItemText>
             <Typography variant="subtitle2" textTransform={"none"}>
-              Ali
+              "title of todo"
             </Typography>
           </ListItemText>
         </ListItemButton>

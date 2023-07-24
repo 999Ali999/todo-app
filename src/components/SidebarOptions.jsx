@@ -7,7 +7,6 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import MailIcon from "@mui/icons-material/Mail";
 
 const SidebarOptions = ({ icon, text }) => {
   return (
