@@ -42,6 +42,7 @@ const Header = ({ onClick }) => {
             }}
             item
             xs={4}
+            spacing={0.5}
           >
             <Grid item>
               <Tooltip title="Change Appearance">

@@ -4,11 +4,12 @@ import Drawer from "@mui/material/Drawer";
 import { Box, Toolbar } from "@mui/material";
 import SidebarOptions from "./SidebarOptions";
 
-import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
-
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import EditSidebarOptions from "./EditSidebarOptions";
 import SellOutlinedIcon from "@mui/icons-material/SellOutlined";
+import FileUpload from "./FileUpload";
+import AddNote from "./AddNote";
+import DueDate from "./DueDate";
 
 const drawerWidth = 360;
 
@@ -30,11 +31,14 @@ const EditSidebar = () => {
       <Box sx={{ overflow: "auto" }}>
         <EditSidebarOptions />
         <SidebarOptions icon={<AddRoundedIcon />} text={"Add step"} />
-        <SidebarOptions
+        {/* <SidebarOptions
           icon={<CalendarMonthOutlinedIcon />}
           text={"Add due date"}
-        />
+        /> */}
+        <DueDate />
         <SidebarOptions icon={<SellOutlinedIcon />} text={"Pick a category"} />
+        <FileUpload />
+        <AddNote />
       </Box>
     </Drawer>
   );
