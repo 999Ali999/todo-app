@@ -1,3 +1,3 @@
 # React + MUI + Firebase
 
-Will create a todo web app
+Will create a todo web app using React.js, Material UI (MUI), Firebase
