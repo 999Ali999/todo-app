@@ -1,12 +1,11 @@
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Box, Button, CssBaseline, Paper } from "@mui/material";
+import { Box, CssBaseline, Paper } from "@mui/material";
 import Header from "./components/Header";
 import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Main from "./components/Main";
 import { app } from "./firebaseConfig";
 import EditSidebar from "./components/EditSideBar";
-import { light } from "@mui/material/styles/createPalette";
 
 // Create your light and dark themes
 const lightTheme = createTheme({
@@ -22,7 +21,7 @@ const darkTheme = createTheme({
 });
 
 const App = () => {
-  const [theme, setTheme] = useState(darkTheme); // Initial theme
+  const [theme, setTheme] = useState(lightTheme); // Initial theme
 
   const toggleTheme = () => {
     setTheme((prevTheme) =>
