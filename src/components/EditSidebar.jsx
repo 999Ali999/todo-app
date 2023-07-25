@@ -31,10 +31,6 @@ const EditSidebar = () => {
       <Box sx={{ overflow: "auto" }}>
         <EditSidebarOptions />
         <SidebarOptions icon={<AddRoundedIcon />} text={"Add step"} />
-        {/* <SidebarOptions
-          icon={<CalendarMonthOutlinedIcon />}
-          text={"Add due date"}
-        /> */}
         <DueDate />
         <SidebarOptions icon={<SellOutlinedIcon />} text={"Pick a category"} />
         <FileUpload />

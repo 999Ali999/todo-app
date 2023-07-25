@@ -13,21 +13,6 @@ import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
 import StarOutlineRoundedIcon from "@mui/icons-material/StarOutlineRounded";
 
 export default function EditSidebarOptions() {
-  const [checked, setChecked] = React.useState([0]);
-
-  const handleToggle = (value) => () => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
-
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
-
-    setChecked(newChecked);
-  };
-
   return (
     <List disablePadding>
       <ListItem

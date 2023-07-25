@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Main from "./components/Main";
-import { app } from "./firebaseConfig";
 import EditSidebar from "./components/EditSideBar";
 
 // Create your light and dark themes
