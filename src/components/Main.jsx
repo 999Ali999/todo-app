@@ -69,6 +69,7 @@ const Main = () => {
       alert("sucess");
     } catch (error) {
       console.log(error);
+      console.log(error);
     }
   };
 
