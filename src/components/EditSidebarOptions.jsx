@@ -12,7 +12,7 @@ import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
 
 import StarOutlineRoundedIcon from "@mui/icons-material/StarOutlineRounded";
 
-export default function EditSidebarOptions() {
+export default function EditSidebarOptions({ title }) {
   return (
     <List disablePadding>
       <ListItem
@@ -33,7 +33,7 @@ export default function EditSidebarOptions() {
           </ListItemIcon>
           <ListItemText>
             <Typography variant="subtitle2" textTransform={"none"}>
-              "title of todo"
+              {title}
             </Typography>
           </ListItemText>
         </ListItemButton>

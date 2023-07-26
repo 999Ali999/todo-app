@@ -13,7 +13,7 @@ import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
 
 import StarOutlineRoundedIcon from "@mui/icons-material/StarOutlineRounded";
 
-const Todos = ({ title }) => {
+const Todos = ({ title, todoClicked }) => {
   const [completed, setCompleted] = useState(false);
 
   const handleToggle = () => {
@@ -25,6 +25,8 @@ const Todos = ({ title }) => {
       <Paper elevation={3}>
         <List disablePadding>
           <ListItem
+            // here is the onClick need to be added to this todo
+            onClick={todoClicked}
             secondaryAction={
               <IconButton edge="end" aria-label="comments">
                 <StarOutlineRoundedIcon />

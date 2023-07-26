@@ -1,10 +1,10 @@
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Box, CssBaseline, Paper } from "@mui/material";
+import { Box, Button, CssBaseline, Paper } from "@mui/material";
 import Header from "./components/Header";
 import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Main from "./components/Main";
-import EditSidebar from "./components/EditSideBar";
+import EditSidebar from "./components/EditSidebar";
 
 // Create your light and dark themes
 const lightTheme = createTheme({
@@ -21,6 +21,11 @@ const darkTheme = createTheme({
 
 const App = () => {
   const [theme, setTheme] = useState(lightTheme); // Initial theme
+  const [dataFromChild, setDataFromChild] = useState(null);
+
+  const handleDataFromChild = (data) => {
+    setDataFromChild(data);
+  };
 
   const toggleTheme = () => {
     setTheme((prevTheme) =>
@@ -35,8 +40,8 @@ const App = () => {
         <Box sx={{ display: "flex" }}>
           <Header onClick={toggleTheme} />
           <Sidebar />
-          <Main />
-          <EditSidebar />
+          <Main onDataFromChild={handleDataFromChild} />
+          <EditSidebar title={"a"} />
         </Box>
       </Paper>
     </ThemeProvider>

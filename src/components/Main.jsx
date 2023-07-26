@@ -13,16 +13,10 @@ import MainHeader from "./MainHeader";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import { app } from "../firebaseConfig";
 import Todos from "./Todos";
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  addDoc,
-  deleteDoc,
-} from "firebase/firestore";
+import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 
-const Main = () => {
+const Main = ({ onDataFromChild }) => {
   const [data, setData] = useState(null);
   const [input, setInput] = useState(null);
 
@@ -45,6 +39,7 @@ const Main = () => {
       });
 
       setData(todos);
+      onDataFromChild(todos);
     }
     fetchData();
   }, []);
@@ -107,11 +102,14 @@ const Main = () => {
           </Grid>
         </Paper>
       </Box>
-      {/* {data && data.map((todo) => <h1 key={todo.id}>{todo.title}</h1>)} */}
       {data ? (
         <>
           {data.map((todo) => (
-            <Todos key={todo.id} title={todo.data.title} />
+            <Todos
+              key={todo.id}
+              title={todo.data.title}
+              todoClicked={() => console.log(todo.id)}
+            />
           ))}
         </>
       ) : (

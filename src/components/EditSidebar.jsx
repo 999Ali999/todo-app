@@ -13,7 +13,7 @@ import DueDate from "./DueDate";
 
 const drawerWidth = 360;
 
-const EditSidebar = () => {
+const EditSidebar = ({ title }) => {
   return (
     <Drawer
       variant="permanent"
@@ -29,7 +29,7 @@ const EditSidebar = () => {
     >
       <Toolbar />
       <Box sx={{ overflow: "auto" }}>
-        <EditSidebarOptions />
+        <EditSidebarOptions title={title} />
         <SidebarOptions icon={<AddRoundedIcon />} text={"Add step"} />
         <DueDate />
         <SidebarOptions icon={<SellOutlinedIcon />} text={"Pick a category"} />
