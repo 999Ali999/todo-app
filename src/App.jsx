@@ -1,7 +1,7 @@
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Box, Button, CssBaseline, Paper } from "@mui/material";
+import { Box, CssBaseline, Paper } from "@mui/material";
 import Header from "./components/Header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Main from "./components/Main";
 import EditSidebar from "./components/EditSidebar";
@@ -20,8 +20,10 @@ const darkTheme = createTheme({
 });
 
 const App = () => {
-  const [theme, setTheme] = useState(lightTheme); // Initial theme
+  const [theme, setTheme] = useState(darkTheme); // Initial theme
   const [dataFromChild, setDataFromChild] = useState(null);
+
+  useEffect(() => {}, [dataFromChild]);
 
   const handleDataFromChild = (data) => {
     setDataFromChild(data);
@@ -38,11 +40,10 @@ const App = () => {
       <CssBaseline />
       <Paper sx={{ minHeight: "100vh" }} elevation={1}>
         <Box sx={{ display: "flex" }}>
-          {/* <Header onClick={toggleTheme} /> */}
-          <Header onClick={() => console.log(dataFromChild)} />
+          <Header onClick={toggleTheme} />
           <Sidebar />
           <Main onDataFromChild={handleDataFromChild} />
-          <EditSidebar title={"a"} />
+          <EditSidebar title={"here"} />
         </Box>
       </Paper>
     </ThemeProvider>

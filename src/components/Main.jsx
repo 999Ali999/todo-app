@@ -37,9 +37,7 @@ const Main = ({ onDataFromChild }) => {
           data: doc.data(),
         });
       });
-
       setData(todos);
-      // onDataFromChild(todos);
     }
     fetchData();
   }, []);
@@ -47,7 +45,6 @@ const Main = ({ onDataFromChild }) => {
   const handleInput = (e) => {
     const newInput = e.target.value;
     setInput(newInput);
-    // console.log(input);
   };
 
   const handleSubmit = async () => {
@@ -64,8 +61,11 @@ const Main = ({ onDataFromChild }) => {
       alert("sucess");
     } catch (error) {
       console.log(error);
-      console.log(error);
     }
+  };
+
+  const setDataFromChildAndPassToApp = (todo) => {
+    onDataFromChild(todo);
   };
 
   return (
@@ -108,7 +108,7 @@ const Main = ({ onDataFromChild }) => {
             <Todos
               key={todo.id}
               title={todo.id}
-              todoClicked={() => onDataFromChild(todo.id)}
+              todoClicked={() => setDataFromChildAndPassToApp(todo.id)}
             />
           ))}
         </>
