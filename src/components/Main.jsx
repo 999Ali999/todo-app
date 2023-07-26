@@ -39,7 +39,7 @@ const Main = ({ onDataFromChild }) => {
       });
 
       setData(todos);
-      onDataFromChild(todos);
+      // onDataFromChild(todos);
     }
     fetchData();
   }, []);
@@ -107,8 +107,8 @@ const Main = ({ onDataFromChild }) => {
           {data.map((todo) => (
             <Todos
               key={todo.id}
-              title={todo.data.title}
-              todoClicked={() => console.log(todo.id)}
+              title={todo.id}
+              todoClicked={() => onDataFromChild(todo.id)}
             />
           ))}
         </>

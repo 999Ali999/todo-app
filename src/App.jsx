@@ -38,7 +38,8 @@ const App = () => {
       <CssBaseline />
       <Paper sx={{ minHeight: "100vh" }} elevation={1}>
         <Box sx={{ display: "flex" }}>
-          <Header onClick={toggleTheme} />
+          {/* <Header onClick={toggleTheme} /> */}
+          <Header onClick={() => console.log(dataFromChild)} />
           <Sidebar />
           <Main onDataFromChild={handleDataFromChild} />
           <EditSidebar title={"a"} />
