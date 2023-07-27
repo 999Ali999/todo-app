@@ -47,6 +47,7 @@ const Todos = ({ title, todoClicked }) => {
                 <Typography
                   sx={{
                     textDecoration: completed ? "line-through" : "none",
+                    color: completed ? "GrayText" : "inherit",
                   }}
                   variant="subtitle2"
                   textTransform={"none"}

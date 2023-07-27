@@ -48,19 +48,23 @@ const Main = ({ onDataFromChild }) => {
   };
 
   const handleSubmit = async () => {
-    try {
-      const docRef = await addDoc(collection(db, "todos"), {
-        title: input,
-        discretion: "",
-        category: ["Green", "Yellow", "Orange", "Red"],
-        steps: [null],
-        favourite: false,
-        note: "",
-        "due date": "",
-      });
-      alert("sucess");
-    } catch (error) {
-      console.log(error);
+    if (input != null) {
+      try {
+        const docRef = await addDoc(collection(db, "todos"), {
+          title: input,
+          discretion: "",
+          category: ["Green", "Yellow", "Orange", "Red"],
+          steps: [null],
+          favourite: false,
+          note: "",
+          "due date": "",
+        });
+        alert("sucess");
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      alert("cant be empthy");
     }
   };
 
