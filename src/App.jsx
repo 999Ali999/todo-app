@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Main from "./components/Main";
 import EditSidebar from "./components/EditSidebar";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { app } from "./firebaseConfig";
 
 // Create your light and dark themes
 const lightTheme = createTheme({
@@ -21,9 +23,22 @@ const darkTheme = createTheme({
 
 const App = () => {
   const [theme, setTheme] = useState(darkTheme); // Initial theme
-  const [dataFromChild, setDataFromChild] = useState(null);
+  const [dataFromChild, setDataFromChild] = useState("null");
+  const [selectedTodo, setSelectedTodo] = useState("choose a todo");
 
-  useEffect(() => {}, [dataFromChild]);
+  const db = getFirestore(app);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const querySnapshot = await getDocs(collection(db, "todos"));
+      querySnapshot.forEach((doc) => {
+        if (doc.id === dataFromChild) {
+          setSelectedTodo(doc.data());
+        }
+      });
+    };
+    fetchData();
+  }, [dataFromChild]);
 
   const handleDataFromChild = (data) => {
     setDataFromChild(data);
@@ -43,7 +58,7 @@ const App = () => {
           <Header onClick={toggleTheme} />
           <Sidebar />
           <Main onDataFromChild={handleDataFromChild} />
-          <EditSidebar title={"here"} />
+          <EditSidebar key={selectedTodo.id} title={selectedTodo.title} />
         </Box>
       </Paper>
     </ThemeProvider>

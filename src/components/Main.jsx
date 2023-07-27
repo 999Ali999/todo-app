@@ -107,7 +107,7 @@ const Main = ({ onDataFromChild }) => {
           {data.map((todo) => (
             <Todos
               key={todo.id}
-              title={todo.id}
+              title={todo.data.title}
               todoClicked={() => setDataFromChildAndPassToApp(todo.id)}
             />
           ))}
