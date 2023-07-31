@@ -40,7 +40,7 @@ const Main = ({ onDataFromChild }) => {
       setData(todos);
     }
     fetchData();
-  }, []);
+  }, [data]);
 
   const handleInput = (e) => {
     const newInput = e.target.value;
