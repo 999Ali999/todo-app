@@ -1,6 +1,6 @@
 # React + MUI + Firebase (Clone of Microsoft Todo)
 
-# Live at: https://todo-app-xi-azure.vercel.app/
+## Live at: https://todo-app-xi-azure.vercel.app/
 
 ![Imgur](./images/Screenshot%202023-07-31%20at%203.51.09%20PM.png)
 ![Imgur](./images/Screenshot%202023-07-31%20at%203.49.19%20PM.png)
